@@ -21,11 +21,13 @@ or add
 
 to the require section of your `composer.json` file.
 
+run migration for database
 
-Usage
------
+```php
+./yii migrate --migrationPath=@kemendikbud-subag-data/yii2-target-output/Module/migrations
+```
 
-Once the extension is installed, simply use it in your code by  :
+add in modules section of main config
 
 ```php
 'modules' => [
@@ -35,5 +37,7 @@ Once the extension is installed, simply use it in your code by  :
     ],
 ```
 
-```php
-<?= \to\AutoloadExample::widget(); ?>```
+Usage
+-----
+
+Once the extension is installed, check the url: [your application base url]/index.php/to
