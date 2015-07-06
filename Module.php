@@ -1,10 +1,12 @@
 <?php
 
-namespace kemdikbud\modules\to;
+namespace kemdikbud\to;
+
+use Yii;
 
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'kemdikbud\modules\to\controllers';
+    public $controllerNamespace = 'kemdikbud\to\controllers';
 
     public function init()
     {

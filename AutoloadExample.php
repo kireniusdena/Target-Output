@@ -1,6 +1,6 @@
 <?php
 
-namespace to;
+namespace kemdikbud\to;
 
 /**
  * This is just an example.
