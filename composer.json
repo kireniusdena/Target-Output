@@ -1,12 +1,12 @@
 {
-    "name": "kemendikbud-subag-data/yii2-target-output",
-    "description": "Aplikasi Pencatatan output dari RKAKL dalam bentuk Module Ekstension Framework Yii 2",
+    "name": "kemdikbud/yii2-target-output",
+    "description": "Aplikasi Pencatatan output dari RKAKL dalam bentuk Module Ekstension Framework Yii2.",
     "type": "yii2-extension",
-    "keywords": ["yii2","extension","target","output"],
+    "keywords": ["yii2","extension"],
     "license": "GPL-2.0",
     "authors": [
         {
-            "name": "kemendikbud-subag-data",
+            "name": "kemdikbud",
             "email": "subbagdatainfo@gmail.com"
         }
     ],
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "to\\": ""
+            "kemdikbud\\to\\": ""
         }
     }
 }
