@@ -28,4 +28,12 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
+'modules' => [
+        'to' => [
+            'class' => 'kemendikbud-subag-data\yii2-target-output\Module',
+        ],
+    ],
+```
+
+```php
 <?= \to\AutoloadExample::widget(); ?>```
