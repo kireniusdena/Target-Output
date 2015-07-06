@@ -45,7 +45,7 @@ to the require section of your `composer.json` file.
 run migration for database
 
 ```php
-./yii migrate --migrationPath=@kemdikbud/yii2-target-output/Module/migrations
+./yii migrate --migrationPath=@kemdikbud/to/Module/migrations
 ```
 
 add in modules section of main config
@@ -53,7 +53,7 @@ add in modules section of main config
 ```php
 'modules' => [
         'to' => [
-            'class' => 'kemdikbud\yii2-target-output\Module',
+            'class' => 'kemdikbud\to\Module',
         ],
     ],
 ```
