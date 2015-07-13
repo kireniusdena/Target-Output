@@ -3,12 +3,6 @@ Target Output
 Aplikasi Pencatatan output dari RKAKL dalam bentuk Module Ekstension Framework Yii 2
 
 
-ER Master Database
-------------
-
-https://to.local-server.link/perancangan/
-
-
 Dependencies
 ------------
 
