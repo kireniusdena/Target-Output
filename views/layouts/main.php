@@ -32,20 +32,29 @@ AppAsset::register($this);
                     'class' => 'navbar-inverse navbar-fixed-top',
                 ],
             ]);
+
+            $menuItems = [
+                ['label' => 'Home', 'url' => ['/to/default/index']],
+                ['label' => 'Target', 'url' => ['/to/baseline/index']],
+                ['label' => 'Output', 'url' => ['/to/outputbaseline/index']],
+                ['label' => 'About', 'url' => ['/to/site/about']],
+                ['label' => 'Contact', 'url' => ['/to/site/contact']],
+                ['label' => 'Jenis', 'url' => ['/to/baselinejenis/index']],
+                ['label' => 'Wilayah', 'url' => ['/to/baselinewilayah/index']],
+            ];
+            if (Yii::$app->user->isGuest) {
+                $menuItems[] = ['label' => 'Signup', 'url' => ['/to/site/signup']];
+                $menuItems[] = ['label' => 'Login', 'url' => ['/to/site/login']];
+            } else {
+                $menuItems[] = [
+                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+                    'url' => ['/site/logout'],
+                    'linkOptions' => ['data-method' => 'post']
+                ];
+            }
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => [
-                    ['label' => 'Home', 'url' => ['/to/default/index']],
-                    ['label' => 'Target', 'url' => ['/to/baseline/index']],
-                    ['label' => 'Output', 'url' => ['/to/outputbaseline/index']],
-                    ['label' => 'About', 'url' => ['/to/site/about']],
-                    ['label' => 'Contact', 'url' => ['/to/site/contact']],
-                    Yii::$app->user->isGuest ?
-                        ['label' => 'Login', 'url' => ['/to/site/login']] :
-                        ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                            'url' => ['/to/site/logout'],
-                            'linkOptions' => ['data-method' => 'post']],
-                ],
+                'items' => $menuItems,
             ]);
             NavBar::end();
         ?>

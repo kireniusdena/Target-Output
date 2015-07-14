@@ -7,17 +7,14 @@ use yii\grid\GridView;
 /* @var $searchModel kemdikbud\to\models\BaselinejenisSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Baselinejenis';
+$this->title = 'Jenis';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="baselinejenis-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
     <p>
-        <?= Html::a('Create Baselinejenis', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+        <?= Html::a('<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Jenis', ['create'], ['class' => 'btn btn-success pull-right']) ?>
+    </p><br>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -25,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
             'kode_jenis',
             'nama_jenis',
 
