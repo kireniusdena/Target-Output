@@ -19,7 +19,7 @@ if ($arraybaselinesudahselesai['nama_class']) {
 	$class_name 				= '\kemdikbud\to\models\\'.ucfirst($arraybaselinesudahselesai['nama_class']);
 	$count 						= $class_name::find()->count();
 }else{
-	$count 						= 0;
+	$count 						= '-';
 }
 
 /* Script untuk count output target */
