@@ -20,13 +20,13 @@ $this->params['breadcrumbs'][] = [
 
     <div class="col-md-12">
         <div class="col-md-3">
-            <i style="width: 18px;height: 18px;float: left;margin-right: 8px;opacity: 0.7;border-style: solid;border-width:2px;border-color:rgb(252, 128, 128);background:rgb(236, 163, 163);"> </i> Output belum dibuat
+            <i style="width: 18px;height: 18px;float: left;margin-right: 8px;opacity: 0.7;border-style: solid;border-width:2px;border-color:rgb(252, 128, 128);background:rgb(236, 163, 163);"> </i> Format Output belum dibuat
         </div>
         <div class="col-md-3">
             <i style="width: 18px;height: 18px;float: left;margin-right: 8px;opacity: 0.7;border-style: solid;border-width:2px;border-color:rgb(197, 197, 197);background:rgb(226, 226, 226);"> </i> Output dalam proses
         </div>
         <div class="col-md-3">
-            <i style="width: 18px;height: 18px;float: left;margin-right: 8px;opacity: 0.7;border-style: solid;border-width:2px;border-color:rgb(13, 94, 165);background:rgb(33, 117, 189);"> </i> Output sudah selesai
+            <i style="width: 18px;height: 18px;float: left;margin-right: 8px;opacity: 0.7;border-style: solid;border-width:2px;border-color:rgb(13, 94, 165);background:rgb(33, 117, 189);"> </i> Laporan Output sudah selesai
         </div>
         <div class="col-md-3">
             <?= Html::a('<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Target', ['create'], ['class' => 'btn btn-success pull-right']) ?>

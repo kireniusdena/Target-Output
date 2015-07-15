@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use kemdikbud\to\models\Baselinejenis;
 
 /* @var $this yii\web\View */
 /* @var $model kemdikbud\to\models\Baseline */
@@ -12,7 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'jenis')->textInput() ?>
+    <?= $form->field($model, 'jenis')->DropDownList(ArrayHelper::map(Baselinejenis::find()->all(), 'id', 'nama_jenis')) ?>
 
     <?= $form->field($model, 'wilayah')->textInput() ?>
 

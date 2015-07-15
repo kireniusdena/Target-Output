@@ -4,18 +4,36 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use kemdikbud\to\models\Baseline;
+use kemdikbud\to\models\Outputbaseline;
 use wbraganca\dynamicform\DynamicFormWidget;
 
 /* @var $this yii\web\View */
 /* @var $model kemdikbud\to\models\Outputbaseline */
 /* @var $form yii\widgets\ActiveForm */
+
+/* Script condition untuk Dropdown
+ * Form output hanya 1 untuk tiap target
+ * Ketika format form sudah dibuat maka tidak bisa dibuat form lagi
+ */
+
+    $arraybaselinesudahselesai  = Outputbaseline::find()->select('id_base_line')->indexBy('id')->column();
+    $stringcondition            = '';
+    foreach ($arraybaselinesudahselesai as $key => $value) {
+        $stringcondition        .= 'id != :'.$key;
+    }
+
+/* Script condition untuk Dropdown
+ * Form output hanya 1 untuk tiap target
+ * Ketika format form sudah dibuat maka tidak bisa dibuat form lagi
+ */
+
 ?>
 <script src="jquery-latest.min.js" type="text/javascript"></script>
 <div class="outputbaseline-form">
 
     <?php $form = ActiveForm::begin(['id' => 'dynamic-form']); ?>
 
-    <?= $form->field($model, 'id_base_line')->dropDownList(ArrayHelper::map(Baseline::find()->all(), 'id', 'uraian')) ?>
+    <?= $form->field($model, 'id_base_line')->dropDownList(ArrayHelper::map(Baseline::find()->where($stringcondition, $arraybaselinesudahselesai)->all(), 'id', 'uraian')) ?>
 
     <!-- Data global Form -->
 

@@ -3,6 +3,7 @@
 namespace kemdikbud\to\controllers;
 
 use Yii;
+use yii\data\ActiveDataProvider;
 use kemdikbud\to\models\Baseline;
 use kemdikbud\to\models\BaselineSearch;
 use yii\web\Controller;
@@ -32,11 +33,13 @@ class BaselineController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new BaselineSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        /*$searchModel = new BaselineSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);*/
+
+        $dataProvider = new ActiveDataProvider(['query' => Baseline::find()->where(['tahun'=>Yii::$app->session['tahun']])->orderBy('kode ASC'),'pagination' => ['pageSize' => 20]]);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
+            //'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

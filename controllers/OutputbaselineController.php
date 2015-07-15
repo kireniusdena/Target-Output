@@ -225,7 +225,7 @@ class ".$table_name." extends \yii\db\ActiveRecord
 
             if ($model->save()) {
                 Yii::$app->db->createCommand($string_sql)->execute();
-                return $this->redirect(['view', 'id' => $model->id]);
+                return $this->redirect(['viewoutput', 'id' => $model->id_base_line]);
             }else{
                 return $this->render('create', [
                     'model' => $model,

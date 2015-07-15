@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model kemdikbud\to\models\Baseline */
 
-$this->title = 'Create Baseline';
-$this->params['breadcrumbs'][] = ['label' => 'Baselines', 'url' => ['index']];
+$this->title = 'Buat Target';
+$this->params['breadcrumbs'][] = ['label' => 'Target', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="baseline-create">
