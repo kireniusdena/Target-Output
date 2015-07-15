@@ -36,7 +36,7 @@ if ($arraybaselinesudahselesai['nama_class']) {
 					</center>
 				</div>
 				<div class="col-md-7">
-					<small>Kode</small><br>
+					<small>Uraian</small><br>
 					<b>
 					<?php
 						if (empty($datawiki)) {
