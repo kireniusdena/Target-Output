@@ -13,7 +13,11 @@ $this->title = 'Target';
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['breadcrumbs'][] = [
     'label' => 'Tahun ', 
-    'template' => "<li style=\"float: right;\">{link}<select class=\"form-inline\" id=\"Tahun\" onclick=\"Changesession()\"><option value=\"2015\">2015</option><option value=\"2016\">2016</option><option value=\"2017\">2017</option><option value=\"2018\">2018</option><option value=\"2019\">2019</option></select></li>"
+    'template' => "<li style=\"float: right;\">{link}<select class=\"form-inline\" id=\"Tahun\" onclick=\"Changesessiontahun()\"><option value=\"2015\">2015</option><option value=\"2016\">2016</option><option value=\"2017\">2017</option><option value=\"2018\">2018</option><option value=\"2019\">2019</option></select></li>"
+];
+$this->params['breadcrumbs'][] = [
+    'label' => 'UPT ', 
+    'template' => "<li style=\"float: right;\">{link}<select class=\"form-inline\" id=\"Upt\" onclick=\"Changesessionupt()\"><option value=\"1\">PKP</option><option value=\"2\">PCBM</option><option value=\"3\">INDB</option><option value=\"4\">BPNB</option><option value=\"5\">SETDITJEN</option></select></li>"
 ];
 ?>
 <div class="baseline-index">
@@ -44,12 +48,22 @@ $this->params['breadcrumbs'][] = [
 
 <script type="text/javascript">
 
+var element         = document.getElementById('Upt');
+element.value       = <?php echo Yii::$app->session['upt'];?>;
+
 var element         = document.getElementById('Tahun');
 element.value       = <?php echo Yii::$app->session['tahun'];?>;
 
-function Changesession(){
+function Changesessionupt(){
+    var element     = document.getElementById('Upt');
+    $.post( "../default/changesessionupt", {'upt': element.value}).done(function( data ) {
+        location.reload();
+    });
+}
+
+function Changesessiontahun(){
     var element     = document.getElementById('Tahun');
-    $.post( "../default/changesession", {'tahun': element.value}).done(function( data ) {
+    $.post( "../default/changesessiontahun", {'tahun': element.value}).done(function( data ) {
         location.reload();
     });
 }

@@ -36,7 +36,7 @@ class BaselineController extends Controller
         /*$searchModel = new BaselineSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);*/
 
-        $dataProvider = new ActiveDataProvider(['query' => Baseline::find()->where(['tahun'=>Yii::$app->session['tahun']])->orderBy('kode ASC'),'pagination' => ['pageSize' => 20]]);
+        $dataProvider = new ActiveDataProvider(['query' => Baseline::find()->where(['tahun'=>Yii::$app->session['tahun'],'jenis'=>Yii::$app->session['upt']])->orderBy('kode ASC'),'pagination' => ['pageSize' => 20]]);
 
         return $this->render('index', [
             //'searchModel' => $searchModel,
