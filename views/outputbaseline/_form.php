@@ -16,10 +16,21 @@ use wbraganca\dynamicform\DynamicFormWidget;
  * Ketika format form sudah dibuat maka tidak bisa dibuat form lagi
  */
 
-    $arraybaselinesudahselesai  = Outputbaseline::find()->select('id_base_line')->indexBy('id')->column();
-    $stringcondition            = '';
+    $arraybaseline                  = Outputbaseline::find()->select('id_base_line')->indexBy('id_base_line')->column();
+    $arraybaselinesudahselesai      = [];
+    foreach ($arraybaseline as $key => $value) {
+        $arraybaselinesudahselesai[':'.$key] = $value;
+    }
+    
+    $stringcondition                = '';
+    $urutan_index                   = 0;
     foreach ($arraybaselinesudahselesai as $key => $value) {
-        $stringcondition        .= 'id != :'.$key;
+        $urutan_index++;
+        if ($urutan_index !== count($arraybaselinesudahselesai)) {
+            $stringcondition        .= 'id != '.$key.' and ';
+        }else{
+            $stringcondition        .= 'id != '.$key;
+        }        
     }
 
 /* Script condition untuk Dropdown

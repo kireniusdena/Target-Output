@@ -13,7 +13,7 @@ $this->title = 'Target';
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['breadcrumbs'][] = [
     'label' => 'UPT ', 
-    'template' => "<li>{link}<select class=\"form-inline\" id=\"Upt\" onclick=\"Changesessionupt()\"><option value=\"1\">PKP</option><option value=\"2\">PCBM</option><option value=\"3\">INDB</option><option value=\"4\">BPNB</option><option value=\"5\">SETDITJEN</option></select></li>"
+    'template' => "<li>{link}<select class=\"form-inline\" id=\"Upt\" onclick=\"Changesessionupt()\"><option value=\"1\">PKP</option><option value=\"2\">PCBM</option><option value=\"3\">INDB</option><option value=\"4\">BPNB</option><option value=\"5\">SETDITJEN</option><option value=\"6\">GALNAS</option><option value=\"7\">Museum</option><option value=\"8\">PKT</option><option value=\"9\">BPCB dan BKP</option><option value=\"10\">SNB</option></select></li>"
 ];
 $this->params['breadcrumbs'][] = [
     'label' => 'Tahun ', 
@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = [
             <i style="width: 18px;height: 18px;float: left;margin-right: 8px;opacity: 0.7;border-style: solid;border-width:2px;border-color:rgb(197, 197, 197);background:rgb(226, 226, 226);"> </i> Output dalam proses
         </div>
         <div class="col-md-3">
-            <i style="width: 18px;height: 18px;float: left;margin-right: 8px;opacity: 0.7;border-style: solid;border-width:2px;border-color:rgb(13, 94, 165);background:rgb(33, 117, 189);"> </i> Laporan Output sudah selesai
+            <i style="width: 18px;height: 18px;float: left;margin-right: 8px;opacity: 0.7;border-style: solid;border-width:2px;border-color:rgb(13, 94, 165);background:rgb(33, 117, 189);"> </i> Laporan Output 6udah selesai
         </div>
         <div class="col-md-3">
             <?= Html::a('<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Target', ['create'], ['class' => 'btn btn-success pull-right']) ?>
