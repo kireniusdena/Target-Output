@@ -1,6 +1,6 @@
 <?php
 use yii\helpers\Html;
-use yii\widgets\ListView;
+use yii\grid\GridView;
 
 $this->title = $data->kode . ' - ' . $data->uraian;
 $this->params['breadcrumbs'][] = 'Output';
@@ -35,13 +35,16 @@ $this->params['breadcrumbs'][] = $this->title;
 			</div>
 		</div>
 	</div>
-</div><br><br>
-<br><br>
-<?= Html::a('<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Output', ['insertoutput', 'id' => $data->id], ['class' => 'btn btn-success pull-right']) ?>
-<br><br>
-<?= ListView::widget([
-    'dataProvider' => $dataProvider,
-    'itemView' => '_output',
-    'layout' => '{items}{pager}',
-    'itemOptions' => ['class' => 'item'],
-]) ?>
+</div><br><br><br><br>
+
+<?= Html::a('<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Output', ['insertoutput', 'id' => $data->id], ['class' => 'btn btn-success pull-right']) ?><br><br>
+
+<?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'columns' => $column_nama,
+        /*'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+            $column_nama,
+            ['class' => 'yii\grid\ActionColumn'],
+        ],*/
+]); ?>

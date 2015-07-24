@@ -24,8 +24,8 @@ class To120150715071012 extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['no'], 'integer'],
-            [['uraian', 'keterangan'], 'string']
+            [['nomor'], 'integer'],
+            [['judulnaskahkebijakan', 'draf', 'permen', 'filenaskah'], 'string']
         ];
     }
 

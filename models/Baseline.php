@@ -52,8 +52,8 @@ class Baseline extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'jenis' => 'Jenis',
-            'wilayah' => 'Wilayah',
+            'jenis' => 'Jenis UPT',
+            'wilayah' => 'Wilayah UPT',
             'kode' => 'Kode',
             'uraian' => 'Uraian',
             'volume' => 'Volume',

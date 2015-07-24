@@ -59,7 +59,14 @@ class OutputbaselineController extends Controller
             ],
         ]);
 
+        $columns        = json_decode($datawiki['nama_kolom_json'], true);
+        $column_nama    = [];
+        foreach ($columns as $key => $value) {
+            array_push($column_nama, $key);
+        }
+
         return $this->render('viewoutput', [
+            'column_nama' => $column_nama,
             'data' => $data,
             'dataProvider' => $dataProvider,
         ]);
